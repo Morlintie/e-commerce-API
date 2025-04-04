@@ -21,35 +21,6 @@ const signUp = async (req, res) => {
     .json({ user: { name: user.name, email: user.email, role: user.role } });
 };
 
-const signOut = async (req, res) => {
-  const { userId } = req.user;
-  const { password } = req.body;
-  if (!password) {
-    throw new BadRequestError("Please provide credentials");
-  }
-
-  const user = await User.findOne({ _id: userId });
-
-  if (!user) {
-    throw new NotFoundError("User not found");
-  }
-  const isPasswordCorrect = await user.checkPassword(password);
-  if (!isPasswordCorrect) {
-    throw new UnauthorizedError("Invalid credentials");
-  }
-
-  res.cookie("token", "logout", {
-    httpOnly: true,
-    signed: process.env.NODE_ENV === "production",
-    signed: true,
-    expire: new Date(Date.now()),
-  });
-
-  await User.deleteOne({ _id: userId });
-
-  res.status(StatusCodes.OK).json({ msg: "Successful sign out" });
-};
-
 const login = async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -93,6 +64,6 @@ const logout = async (req, res) => {
 module.exports = {
   signUp,
   login,
-  signOut,
+
   logout,
 };
