@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -15,7 +16,7 @@ const UserSchema = new mongoose.Schema({
       "Please provide valid email.",
     ],
     validate: {
-      validator: async () => {
+      validator: async function () {
         const existingUser = await mongoose
           .model("User")
           .findOne({ email: this.email });
@@ -36,6 +37,7 @@ const UserSchema = new mongoose.Schema({
       values: ["user", "admin"],
       message: "Please provide a valid role",
     },
+    default: "user",
   },
 
   password: {
@@ -44,6 +46,18 @@ const UserSchema = new mongoose.Schema({
     trim: true,
   },
 });
+
+UserSchema.pre("save", async function () {
+  if (this.isModified("password")) {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+  }
+});
+
+UserSchema.methods.checkPassword = async function (candidatePassword) {
+  const match = await bcrypt.compare(candidatePassword, this.password);
+  return match;
+};
 
 const User = mongoose.model("User", UserSchema);
 

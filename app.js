@@ -1,4 +1,5 @@
 require("express-async-errors");
+const cookieParser = require("cookie-parser");
 const errorHandlerMiddleware = require("./middlewares/errorHandler");
 const notFoundMiddleware = require("./middlewares/notFound");
 const connectDB = require("./db/connect");
@@ -9,6 +10,7 @@ const PORT = process.env.PORT;
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser(process.env.JWT_SECRET));
 
 app.use("/api/v1/auth", authRouter);
 
