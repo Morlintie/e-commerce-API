@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+}
+h1,
+h2,
+h3 {
+  color: #333;
+}
+.endpoint {
+  padding: 15px;
+  border-left: 4px solid #007bff;
+  background: #f9f9f9;
+  margin-bottom: 20px;
+}
+pre {
+  background: #eee;
+  padding: 10px;
+  overflow-x: auto;
+}

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>E-Commerce-API</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>E-Commerce-API</h1>
+      <p>
+        This documentation outlines the available API endpoints in the
+        <strong>E-Commerce-API</strong> collection.
+      </p>
+      <div id="api-content">
+        <div class="group">
+          <h2>Auth</h2>
+          <div class="endpoint">
+            <h3>Sign Up</h3>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>URL:</strong> {{URL}}/auth/signup</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre>
+{
+    "name":"susan",
+    "email":"susan@gmail.com",
+    "password":"secret"
+}</pre
+            >
+          </div>
+
+          <div class="endpoint">
+            <h3>Login</h3>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>URL:</strong> {{URL}}/auth/login</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre>
+{
+    "email":"john@gmail.com",
+    "password": "secret"
+}</pre
+            >
+          </div>
+
+          <div class="endpoint">
+            <h3>Logout</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>URL:</strong> {{URL}}/auth/logout</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+        </div>
+        <div class="group">
+          <h2>User</h2>
+          <div class="endpoint">
+            <h3>Get All Users</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>URL:</strong> {{URL}}/user</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Show User</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>URL:</strong> {{URL}}/user/show/1234</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Update Password</h3>
+            <p><strong>Method:</strong> PATCH</p>
+            <p><strong>URL:</strong> {{URL}}/user/password</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre>
+{
+    "oldPassword":"secret",
+    "newPassword":"anothersecret"
+}</pre
+            >
+          </div>
+
+          <div class="endpoint">
+            <h3>Get Single User</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>URL:</strong> {{URL}}/user/67efcdeb771bec07019908bf</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Update User</h3>
+            <p><strong>Method:</strong> PATCH</p>
+            <p><strong>URL:</strong> {{URL}}/user/67efcdeb771bec07019908bf</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre>
+{
+    "name":"mehmet",
+    "email":"mehmet@gmail.com"
+}</pre
+            >
+          </div>
+
+          <div class="endpoint">
+            <h3>Delete User</h3>
+            <p><strong>Method:</strong> DELETE</p>
+            <p><strong>URL:</strong> {{URL}}/user/67effb3fe75bddbcc1e99cb5</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+        </div>
+        <div class="group">
+          <h2>Product</h2>
+          <div class="endpoint">
+            <h3>Get All Products</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>URL:</strong> {{URL}}/product</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Post Product</h3>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>URL:</strong> {{URL}}/product</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Get Single Product</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p>
+              <strong>URL:</strong> {{URL}}/product/67f131edeed4855130a7a436
+            </p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Update Single Product</h3>
+            <p><strong>Method:</strong> PATCH</p>
+            <p>
+              <strong>URL:</strong> {{URL}}/product/67f044f19909a8819a2f024b
+            </p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Delete Single Product</h3>
+            <p><strong>Method:</strong> DELETE</p>
+            <p>
+              <strong>URL:</strong> {{URL}}/product/67f12795bd44b9bd93a8a141
+            </p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+        </div>
+        <div class="group">
+          <h2>Review</h2>
+          <div class="endpoint">
+            <h3>Get All Reviews</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>URL:</strong> {{URL}}/review</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Get One User's Reviews</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p>
+              <strong>URL:</strong> {{URL}}/review/user/67f029274d63d3b995d9a281
+            </p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Get One Product's Reviews</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p>
+              <strong>URL:</strong>
+              {{URL}}/review/product/67f130c12be91bc6fca9039f
+            </p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Get One Review</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>URL:</strong> {{URL}}/review/67f10189c93a6302b017070b</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Post Review</h3>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>URL:</strong> {{URL}}/review</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre>
+{
+    "rating": "3",
+    "title": "Its OK",
+    "comment": "This guy thougth JS good",
+    "product": "67f13300eed4855130a7a440"
+}</pre
+            >
+          </div>
+
+          <div class="endpoint">
+            <h3>Update Review</h3>
+            <p><strong>Method:</strong> PATCH</p>
+            <p><strong>URL:</strong> {{URL}}/review/67f12be99d51dba4bf6433ab</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre>
+{
+    "rating": "3"
+}</pre
+            >
+          </div>
+
+          <div class="endpoint">
+            <h3>Delete Review</h3>
+            <p><strong>Method:</strong> DELETE</p>
+            <p><strong>URL:</strong> {{URL}}/review/67f12e9e1f57a878e5bb1fd0</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+        </div>
+        <div class="group">
+          <h2>Order</h2>
+          <div class="endpoint">
+            <h3>Get All Orders</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>URL:</strong> {{URL}}/order</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Get Single Order</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>URL:</strong> {{URL}}/order/67f15ccdac144aeb034b8cbb</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Get User's Orders</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p>
+              <strong>URL:</strong> {{URL}}/order/user/67f029274d63d3b995d9a281
+            </p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Get Product's Order</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p>
+              <strong>URL:</strong>
+              {{URL}}/order/product/67f13377eed4855130a7a444
+            </p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+
+          <div class="endpoint">
+            <h3>Post Order</h3>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>URL:</strong> {{URL}}/order</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre>
+{
+    "tax": "5000",
+    "shippingFee": "2000",
+    "cartItems": [
+       
+         {
+            "name": "TestDaf Vorbereitung Zettel",
+            "image":"https://res.cloudinary.com/dppjlhdth/image/upload/v1743860207/File%20upload/q6kz2abxhax4imjgozhz.png",
+            "price":"12327",
+            "amount": "2",
+            "product": "67f131edeed4855130a7a436"
+        },
+         {
+            "name": "TestDaf Vorbereitung Zettel",
+            "image":"https://res.cloudinary.com/dppjlhdth/image/upload/v1743860207/File%20upload/q6kz2abxhax4imjgozhz.png",
+            "price":"12327",
+            "amount": "2",
+            "product": "67f13377eed4855130a7a444"
+        }
+    ]
+
+
+}</pre
+            >
+          </div>
+
+          <div class="endpoint">
+            <h3>Update Order</h3>
+            <p><strong>Method:</strong> PATCH</p>
+            <p><strong>URL:</strong> {{URL}}/order/67f1497b4da486d609632049</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre>
+{
+    "paymentIntentId": "12345"
+}</pre
+            >
+          </div>
+
+          <div class="endpoint">
+            <h3>Delete Order</h3>
+            <p><strong>Method:</strong> DELETE</p>
+            <p><strong>URL:</strong> {{URL}}/order/67f1624454ee591bc8aba614</p>
+            <p><strong>Request Body Example:</strong></p>
+            <pre></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

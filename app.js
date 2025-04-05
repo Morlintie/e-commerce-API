@@ -35,7 +35,8 @@ app.use(xss());
 app.use(mongoSanitize());
 
 app.use(express.json());
-app.use(morgan("tiny"));
+app.use(express.static("./public"));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(fileUploader({ useTempFiles: true }));
 app.use(cookieParser(process.env.JWT_SECRET));
