@@ -6,203 +6,384 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="sidebar">
+      <h2>E-Commerce-API</h2>
+      <ul id="nav-list">
+        <li><a href="#group-0">Auth</a></li>
+        <li><a href="#group-1">User</a></li>
+        <li><a href="#group-2">Product</a></li>
+        <li><a href="#group-3">Review</a></li>
+        <li><a href="#group-4">Order</a></li>
+      </ul>
+    </div>
+    <div class="main-content">
       <h1>E-Commerce-API</h1>
       <p>
         This documentation outlines the available API endpoints in the
         <strong>E-Commerce-API</strong> collection.
       </p>
       <div id="api-content">
-        <div class="group">
+        <div class="group" id="group-0">
           <h2>Auth</h2>
-          <div class="endpoint">
+
+          <div class="endpoint" id="group-0-ep-0">
             <h3>Sign Up</h3>
             <p><strong>Method:</strong> POST</p>
             <p><strong>URL:</strong> {{URL}}/auth/signup</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre>
+
+            <button class="toggle-btn" data-target="group-0-ep-0-body">
+              Toggle Request Body
+            </button>
+            <pre id="group-0-ep-0-body" class="collapsible">
 {
     "name":"susan",
     "email":"susan@gmail.com",
     "password":"secret"
 }</pre
             >
+
+            <button class="toggle-btn" data-target="group-0-ep-0-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-0-ep-0-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-0-ep-1">
             <h3>Login</h3>
             <p><strong>Method:</strong> POST</p>
             <p><strong>URL:</strong> {{URL}}/auth/login</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre>
+
+            <button class="toggle-btn" data-target="group-0-ep-1-body">
+              Toggle Request Body
+            </button>
+            <pre id="group-0-ep-1-body" class="collapsible">
 {
     "email":"john@gmail.com",
     "password": "secret"
 }</pre
             >
+
+            <button class="toggle-btn" data-target="group-0-ep-1-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-0-ep-1-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-0-ep-2">
             <h3>Logout</h3>
             <p><strong>Method:</strong> GET</p>
             <p><strong>URL:</strong> {{URL}}/auth/logout</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-0-ep-2-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-0-ep-2-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
         </div>
-        <div class="group">
+        <div class="group" id="group-1">
           <h2>User</h2>
-          <div class="endpoint">
+
+          <div class="endpoint" id="group-1-ep-0">
             <h3>Get All Users</h3>
             <p><strong>Method:</strong> GET</p>
             <p><strong>URL:</strong> {{URL}}/user</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-1-ep-0-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-1-ep-0-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-1-ep-1">
             <h3>Show User</h3>
             <p><strong>Method:</strong> GET</p>
             <p><strong>URL:</strong> {{URL}}/user/show/1234</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-1-ep-1-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-1-ep-1-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-1-ep-2">
             <h3>Update Password</h3>
             <p><strong>Method:</strong> PATCH</p>
             <p><strong>URL:</strong> {{URL}}/user/password</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre>
+
+            <button class="toggle-btn" data-target="group-1-ep-2-body">
+              Toggle Request Body
+            </button>
+            <pre id="group-1-ep-2-body" class="collapsible">
 {
     "oldPassword":"secret",
     "newPassword":"anothersecret"
 }</pre
             >
+
+            <button class="toggle-btn" data-target="group-1-ep-2-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-1-ep-2-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-1-ep-3">
             <h3>Get Single User</h3>
             <p><strong>Method:</strong> GET</p>
             <p><strong>URL:</strong> {{URL}}/user/67efcdeb771bec07019908bf</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-1-ep-3-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-1-ep-3-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-1-ep-4">
             <h3>Update User</h3>
             <p><strong>Method:</strong> PATCH</p>
             <p><strong>URL:</strong> {{URL}}/user/67efcdeb771bec07019908bf</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre>
+
+            <button class="toggle-btn" data-target="group-1-ep-4-body">
+              Toggle Request Body
+            </button>
+            <pre id="group-1-ep-4-body" class="collapsible">
 {
     "name":"mehmet",
     "email":"mehmet@gmail.com"
 }</pre
             >
+
+            <button class="toggle-btn" data-target="group-1-ep-4-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-1-ep-4-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-1-ep-5">
             <h3>Delete User</h3>
             <p><strong>Method:</strong> DELETE</p>
             <p><strong>URL:</strong> {{URL}}/user/67effb3fe75bddbcc1e99cb5</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-1-ep-5-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-1-ep-5-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
         </div>
-        <div class="group">
+        <div class="group" id="group-2">
           <h2>Product</h2>
-          <div class="endpoint">
+
+          <div class="endpoint" id="group-2-ep-0">
             <h3>Get All Products</h3>
             <p><strong>Method:</strong> GET</p>
             <p><strong>URL:</strong> {{URL}}/product</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-2-ep-0-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-2-ep-0-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-2-ep-1">
             <h3>Post Product</h3>
             <p><strong>Method:</strong> POST</p>
             <p><strong>URL:</strong> {{URL}}/product</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-2-ep-1-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-2-ep-1-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-2-ep-2">
             <h3>Get Single Product</h3>
             <p><strong>Method:</strong> GET</p>
             <p>
               <strong>URL:</strong> {{URL}}/product/67f131edeed4855130a7a436
             </p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-2-ep-2-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-2-ep-2-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-2-ep-3">
             <h3>Update Single Product</h3>
             <p><strong>Method:</strong> PATCH</p>
             <p>
               <strong>URL:</strong> {{URL}}/product/67f044f19909a8819a2f024b
             </p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-2-ep-3-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-2-ep-3-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-2-ep-4">
             <h3>Delete Single Product</h3>
             <p><strong>Method:</strong> DELETE</p>
             <p>
               <strong>URL:</strong> {{URL}}/product/67f12795bd44b9bd93a8a141
             </p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-2-ep-4-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-2-ep-4-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
         </div>
-        <div class="group">
+        <div class="group" id="group-3">
           <h2>Review</h2>
-          <div class="endpoint">
+
+          <div class="endpoint" id="group-3-ep-0">
             <h3>Get All Reviews</h3>
             <p><strong>Method:</strong> GET</p>
             <p><strong>URL:</strong> {{URL}}/review</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-3-ep-0-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-3-ep-0-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-3-ep-1">
             <h3>Get One User's Reviews</h3>
             <p><strong>Method:</strong> GET</p>
             <p>
               <strong>URL:</strong> {{URL}}/review/user/67f029274d63d3b995d9a281
             </p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-3-ep-1-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-3-ep-1-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-3-ep-2">
             <h3>Get One Product's Reviews</h3>
             <p><strong>Method:</strong> GET</p>
             <p>
               <strong>URL:</strong>
               {{URL}}/review/product/67f130c12be91bc6fca9039f
             </p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-3-ep-2-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-3-ep-2-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-3-ep-3">
             <h3>Get One Review</h3>
             <p><strong>Method:</strong> GET</p>
             <p><strong>URL:</strong> {{URL}}/review/67f10189c93a6302b017070b</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-3-ep-3-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-3-ep-3-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-3-ep-4">
             <h3>Post Review</h3>
             <p><strong>Method:</strong> POST</p>
             <p><strong>URL:</strong> {{URL}}/review</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre>
+
+            <button class="toggle-btn" data-target="group-3-ep-4-body">
+              Toggle Request Body
+            </button>
+            <pre id="group-3-ep-4-body" class="collapsible">
 {
     "rating": "3",
     "title": "Its OK",
@@ -210,73 +391,140 @@
     "product": "67f13300eed4855130a7a440"
 }</pre
             >
-          </div>
 
-          <div class="endpoint">
-            <h3>Update Review</h3>
-            <p><strong>Method:</strong> PATCH</p>
-            <p><strong>URL:</strong> {{URL}}/review/67f12be99d51dba4bf6433ab</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre>
+            <button class="toggle-btn" data-target="group-3-ep-4-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-3-ep-4-response" class="collapsible">
 {
-    "rating": "3"
+  "status": "success",
+  "data": "Example response data here."
 }</pre
             >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-3-ep-5">
+            <h3>Update Review</h3>
+            <p><strong>Method:</strong> PATCH</p>
+            <p><strong>URL:</strong> {{URL}}/review/67f12be99d51dba4bf6433ab</p>
+
+            <button class="toggle-btn" data-target="group-3-ep-5-body">
+              Toggle Request Body
+            </button>
+            <pre id="group-3-ep-5-body" class="collapsible">
+{
+    "rating": "3"
+}</pre
+            >
+
+            <button class="toggle-btn" data-target="group-3-ep-5-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-3-ep-5-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
+          </div>
+
+          <div class="endpoint" id="group-3-ep-6">
             <h3>Delete Review</h3>
             <p><strong>Method:</strong> DELETE</p>
             <p><strong>URL:</strong> {{URL}}/review/67f12e9e1f57a878e5bb1fd0</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-3-ep-6-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-3-ep-6-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
         </div>
-        <div class="group">
+        <div class="group" id="group-4">
           <h2>Order</h2>
-          <div class="endpoint">
+
+          <div class="endpoint" id="group-4-ep-0">
             <h3>Get All Orders</h3>
             <p><strong>Method:</strong> GET</p>
             <p><strong>URL:</strong> {{URL}}/order</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-4-ep-0-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-4-ep-0-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-4-ep-1">
             <h3>Get Single Order</h3>
             <p><strong>Method:</strong> GET</p>
             <p><strong>URL:</strong> {{URL}}/order/67f15ccdac144aeb034b8cbb</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-4-ep-1-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-4-ep-1-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-4-ep-2">
             <h3>Get User's Orders</h3>
             <p><strong>Method:</strong> GET</p>
             <p>
               <strong>URL:</strong> {{URL}}/order/user/67f029274d63d3b995d9a281
             </p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-4-ep-2-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-4-ep-2-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-4-ep-3">
             <h3>Get Product's Order</h3>
             <p><strong>Method:</strong> GET</p>
             <p>
               <strong>URL:</strong>
               {{URL}}/order/product/67f13377eed4855130a7a444
             </p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-4-ep-3-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-4-ep-3-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-4-ep-4">
             <h3>Post Order</h3>
             <p><strong>Method:</strong> POST</p>
             <p><strong>URL:</strong> {{URL}}/order</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre>
+
+            <button class="toggle-btn" data-target="group-4-ep-4-body">
+              Toggle Request Body
+            </button>
+            <pre id="group-4-ep-4-body" class="collapsible">
 {
     "tax": "5000",
     "shippingFee": "2000",
@@ -301,26 +549,57 @@
 
 }</pre
             >
-          </div>
 
-          <div class="endpoint">
-            <h3>Update Order</h3>
-            <p><strong>Method:</strong> PATCH</p>
-            <p><strong>URL:</strong> {{URL}}/order/67f1497b4da486d609632049</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre>
+            <button class="toggle-btn" data-target="group-4-ep-4-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-4-ep-4-response" class="collapsible">
 {
-    "paymentIntentId": "12345"
+  "status": "success",
+  "data": "Example response data here."
 }</pre
             >
           </div>
 
-          <div class="endpoint">
+          <div class="endpoint" id="group-4-ep-5">
+            <h3>Update Order</h3>
+            <p><strong>Method:</strong> PATCH</p>
+            <p><strong>URL:</strong> {{URL}}/order/67f1497b4da486d609632049</p>
+
+            <button class="toggle-btn" data-target="group-4-ep-5-body">
+              Toggle Request Body
+            </button>
+            <pre id="group-4-ep-5-body" class="collapsible">
+{
+    "paymentIntentId": "12345"
+}</pre
+            >
+
+            <button class="toggle-btn" data-target="group-4-ep-5-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-4-ep-5-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
+          </div>
+
+          <div class="endpoint" id="group-4-ep-6">
             <h3>Delete Order</h3>
             <p><strong>Method:</strong> DELETE</p>
             <p><strong>URL:</strong> {{URL}}/order/67f1624454ee591bc8aba614</p>
-            <p><strong>Request Body Example:</strong></p>
-            <pre></pre>
+
+            <button class="toggle-btn" data-target="group-4-ep-6-response">
+              Toggle Example Response
+            </button>
+            <pre id="group-4-ep-6-response" class="collapsible">
+{
+  "status": "success",
+  "data": "Example response data here."
+}</pre
+            >
           </div>
         </div>
       </div>
