@@ -10,6 +10,7 @@ const authRouter = require("./routes/auth");
 const userRouter = require("./routes/user");
 const productRouter = require("./routes/product");
 const reviewRouter = require("./routes/review");
+const orderRouter = require("./routes/order");
 
 const express = require("express");
 const PORT = process.env.PORT;
@@ -31,6 +32,7 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/product", productRouter);
 app.use("/api/v1/review", reviewRouter);
+app.use("/api/v1/order", orderRouter);
 
 app.use(errorHandlerMiddleware);
 app.use(notFoundMiddleware);
