@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Review = require("./Review");
 
 const imageSchema = new mongoose.Schema({
   url: {
@@ -66,6 +67,11 @@ const ProductSchema = new mongoose.Schema(
       min: 0,
       max: 5,
     },
+    numOfReviews: {
+      type: Number,
+      default: 0,
+      required: true,
+    },
 
     user: {
       type: mongoose.Types.ObjectId,
@@ -75,6 +81,10 @@ const ProductSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+ProductSchema.post("findOneAndDelete", async (doc) => {
+  await Review.deleteMany({ product: doc._id });
+});
 
 const Product = mongoose.model("Product", ProductSchema);
 
