@@ -2,6 +2,11 @@ require("express-async-errors");
 const cookieParser = require("cookie-parser");
 const fileUploader = require("express-fileupload");
 const morgan = require("morgan");
+const helmet = require("helmet");
+const xss = require("xss-clean");
+const cors = require("cors");
+const rateLimiter = require("express-rate-limit");
+const mongoSanitize = require("express-mongo-sanitize");
 const cloudinary = require("cloudinary").v2;
 const errorHandlerMiddleware = require("./middlewares/errorHandler");
 const notFoundMiddleware = require("./middlewares/notFound");
@@ -15,6 +20,19 @@ const orderRouter = require("./routes/order");
 const express = require("express");
 const PORT = process.env.PORT;
 const app = express();
+
+app.set("trust proxy", 1);
+app.use(
+  rateLimiter({
+    windowMs: 15 * 60 * 1000,
+    max: 60,
+    message: "To many requests from this IP. Please try again later",
+  })
+);
+app.use(helmet());
+app.use(cors());
+app.use(xss());
+app.use(mongoSanitize());
 
 app.use(express.json());
 app.use(morgan("tiny"));
